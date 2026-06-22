@@ -1,3 +1,3 @@
 # SESI_HTML
 
-Exato
+Disciplna de desenvolvimento de aplicativos
