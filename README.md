@@ -1,3 +1,3 @@
 # SESI_HTML
 
-Disciplna de desenvolvimento de aplicativos
+Disciplina de desenvolvimento de aplicativos da turma do 2 ano do 5 itinerario
