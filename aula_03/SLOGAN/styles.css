@@ -1,0 +1,45 @@
+/* #grupo{
+    display: flex;
+    justify-content:center;
+
+}
+
+.grupo-item{
+    width: 100px;
+    height: 100px;
+    font-size: large;
+    border-radius: 50%;
+    border: black;
+    margin: 10px;
+} */
+
+/* Alinha a imagem e todo o bloco de textos/links lado a lado */
+#bloco-conteudo {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Organiza o texto e os links na direita */
+.texto-lateral {
+    flex: 1;
+}
+
+/* Configuração do Quadrado Preto */
+.grupo-item {
+    width: 550px;           /* Largura alterada para 550px */
+    height: 100px;          /* Altura mantida em 100px */
+    background-color: black; 
+    margin-top: 10px;
+    
+    /* Configurações de texto */
+    color: white;           /* O correto em CSS é 'color', e não 'font-color' */
+    font-size: 24px;        /* Tamanho da fonte do texto */
+    font-weight: bold;      /* Deixa o texto em negrito */
+    
+    /* O Flexbox abaixo serve para centralizar o texto perfeitamente no meio do retângulo */
+    display: flex;
+    justify-content: center; /* Centraliza na horizontal */
+    align-items: center;     /* Centraliza na vertical */
+}
