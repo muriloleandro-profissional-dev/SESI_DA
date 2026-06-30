@@ -1,0 +1,109 @@
+.principal{
+    display: flex;
+    width: 100%;
+
+
+}
+
+.titulo{
+    position: absolute;
+    font-size: 300%;
+    top: 10%;
+    left: 11%;
+
+    color: black;
+}
+
+.foto-pug{
+    flex: 40%;
+    width: 100%;
+    height: 107%;
+    margin-left: 20px;
+    object-fit: cover;
+}
+
+.titulo_direita{
+    position: absolute;
+    font-size: 450%;
+    top: 12%;
+    left: 40%;
+}
+
+.titulo_direita2{
+    position: absolute;
+    font-size: 420%;
+    top: 20%;
+    left: 45%;
+}
+
+.direita{
+    position: absolute;
+    top: 45%;
+    left: 53%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+}
+
+.botao{
+    width: 250%;
+    height: 60px;
+    border-radius: 30px;
+    background-color: transparent;
+    border: 1px solid #000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+    
+    cursor: pointer;
+    
+}
+
+.foto-google{
+    width: 50px;
+    height: 50px;
+    
+    object-fit: contain;
+}
+
+.foto-apple{
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.foto-email{
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+
+.saber_mais{
+    position: absolute;
+    top: 67%;
+    left: 59%;
+}
+
+
+.vamos{
+    width: 20%;
+    height: 90px;
+    position: absolute;
+    top: 90%;
+    left: 56%;
+    border-radius: 45px;
+    text-align: center;
+    background-color: #000;
+    color: white;
+    font-size: 200%;
+}
+
+
+
+
+
+
