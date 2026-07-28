@@ -56,10 +56,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
- 
+    
     
     cursor: pointer;
     
+}
+
+.botao:hover{
+    background-color: #2980b9;
 }
 
 .foto-google{
