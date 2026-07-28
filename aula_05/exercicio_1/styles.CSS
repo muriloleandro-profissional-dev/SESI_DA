@@ -52,12 +52,12 @@
     border-radius: 30px;
     background-color: transparent;
     border: 1px solid #000;
-
+    
     display: flex;
     align-items: center;
     justify-content: center;
     
-    
+    transition: background-color 0.3s ease;
     cursor: pointer;
     
 }
@@ -89,7 +89,8 @@
 .saber_mais{
     position: absolute;
     top: 67%;
-    left: 59%;
+    left: 57%;
+
 }
 
 
@@ -104,10 +105,15 @@
     background-color: #000;
     color: white;
     font-size: 200%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    text-decoration: none;  
+    display: flex;          
+    align-items: center;    
+    justify-content: center;
 }
 
-
-
-
-
-
+.vamos:hover{
+    background-color: rgb(129, 127, 123);
+}
