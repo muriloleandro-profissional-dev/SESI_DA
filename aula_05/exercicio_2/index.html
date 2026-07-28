@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>Petshop</title>
     <style>
         * {
@@ -76,7 +77,12 @@
             gap: 15px;
             flex-wrap: wrap;
             margin-bottom: 50px;
+            /* transition: 0.3s ease; */
         }
+
+        /* .categorias:hover{
+            transform: scale(1.1);
+        } */
 
         .card {
             width: 140px;
@@ -95,26 +101,52 @@
         }
 
 
-        .gatos { background-color: #5c5c5c; }
-        .cachorros { background-color: #4a4a4a; }
-        .aves { background-color: #6e6e6e; }
-        .peixes { background-color: #2b2b2b; }
+        .gatos { background-color: #5c5c5c; 
+            transition: 0.3s ease;
+        }
+        .gatos:hover{
+            transform: scale(1.2);
+        }
+
+        .cachorros { background-color: #4a4a4a; 
+            transition: 0.3s ease;
+        }
+        .cachorros:hover{
+            transform: scale(1.2);
+        }
+
+        .aves { background-color: #6e6e6e; 
+            transition: 0.3s ease;
+        }
+        .aves:hover{
+            transform: scale(1.2);
+        }
+
+        .peixes { background-color: #2b2b2b; 
+            transition: 0.3s ease;
+        }
+        .peixes:hover{
+            transform: scale(1.2);
+        }
 
     
         .banner-membro {
             background-color: #000000;
+            /* width: 1897px; */
             width: 100%;
-            padding: 40px 20px;
+            padding: 80px 20px;
+
             display: flex;
             justify-content: center;
+           
         }
 
         .card-membro {
             background-color: #ffffff;
             width: 100%;
-            max-width: 650px;
+            max-width: 850px;
             border-radius: 30px;
-            padding: 30px;
+            padding: 80px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -147,11 +179,15 @@
             font-size: 18px;
             font-weight: bold;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
+        /* .botao-juntar:hover{
+            background-color: rgb(129, 127, 123);
+} */
 
         .foto-membro {
-            width: 220px;
-            height: 140px;
+            width: 400px;
+            height: 250px;
             background-color: #f0a500;
             border-radius: 20px;
         }
@@ -201,7 +237,7 @@
                 <p>Ganhe um desconto</p>
                 <button class="botao-juntar">Juntar-se</button>
             </div>
-            <div class="foto-membro">
+            <!-- <div class="foto-membro"> -->
             <div class="foto-membro" style="background-image: url('gato_laranja.jpg'); background-size: cover; background-position: center;">
                 <!-- <a href="">gatos</a> -->
                 <!-- <img src="imagens/gato_laranja.jpg" alt="gato"> -->
@@ -209,22 +245,30 @@
         </div>
     </div>
 
+
+
+
     <div class="grupo-dicas">
         <div class="dicas-le">
             <h1>Algumas boas dicas para cuidar do seu animal de estimação:</h1>
-
+<br>
             <p>
                 <span>Paciência e compreensão:</span>  <br>
-                entenda que os animais de estimação têm suas personalidades. Seja paciente, especialmente durante o treinamento.
-
+                entenda que os animais de estimação têm suas personalidades. Seja paciente, especialmente durante o treinamento.
+<br>
+<br>
                 <span>Eduque-se:</span>  <br>
                 aprenda sobre a raça, os comportamentos e as necessidades de saúde específicas do seu animal de estimação.
-
+<br>
+<br>
                 <span>Preparação para emergências:</span>  <br>
                 familiarize-se com a localização da clínica veterinária de emergência mais próxima.
+<br>
+<br>
 
                 <span>Reforço positivo:</span>  <br>
                 aprenda técnicas de reforço positivo</p>
+        <p>     <br><br><br><br></p>
         </div>
 
         <div class="dicas-ld">

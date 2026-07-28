@@ -48,3 +48,40 @@
     position: relative;
     z-index: 3;
 }
+
+.botao-juntar:hover{
+    background-color: rgb(129, 127, 123);
+}
+
+/* .dicas-le{
+    
+     position: relative;
+    top: 400px;
+    left: -750px; 
+
+    margin-top: 30px;
+    text-align: left;
+
+}  */
+
+.dicas-le {
+    width: 120%;
+    max-width: 800px;        /* Usa exatamente o mesmo tamanho do seu <main> */
+    margin: 40px auto 0 auto;/* Dá espaço em cima e centraliza o bloco */
+    text-align: left;        /* Alinha as frases à esquerda */
+}
+
+.grupo-dicas {
+    width: 100%;
+    max-width: 800px; /* Mesma largura do seu <main> */
+    padding: 20px;
+}
+
+.dicas-le h1{
+    font-size: 35px;
+}
+
+.dicas-le p{
+    font-size: 17px;
+}
+
