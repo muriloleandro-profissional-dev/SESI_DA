@@ -64,24 +64,93 @@
 
 }  */
 
-.dicas-le {
-    width: 120%;
-    max-width: 800px;        /* Usa exatamente o mesmo tamanho do seu <main> */
-    margin: 40px auto 0 auto;/* Dá espaço em cima e centraliza o bloco */
-    text-align: left;        /* Alinha as frases à esquerda */
-}
 
 .grupo-dicas {
-    width: 100%;
-    max-width: 800px; /* Mesma largura do seu <main> */
-    padding: 20px;
+
+    /* display: flex;
+    justify-content: center;
+    align-items: right; */
+    
+    /* width: 100%;
+    max-width: 800px;  Mesma largura do seu <main>
+    padding: 20px;  */
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1800px;
+    margin: 80px auto;
+    padding: 0 20px;
+    gap: 40px;
 }
 
+.dicas-le {
+
+    /* position: relative;
+    top: 80px;
+    left: -480px; */
+
+    /* width: 120%;
+    max-width: 800px;         Usa exatamente o mesmo tamanho do seu <main> 
+    margin: 40px auto 0 auto; Dá espaço em cima e centraliza o bloco 
+    text-align: left;       Alinha as frases à esquerda */
+
+    flex: 1;
+
+} 
+
+
+
 .dicas-le h1{
-    font-size: 35px;
+
+    /* font-size: 35px; */
+
+    font-size: 50px;
 }
 
 .dicas-le p{
-    font-size: 17px;
+
+    /* font-size: 17px; */
+
+    font-size: 18px;
 }
 
+.dicas-ld{
+    /* margin: 40px auto 0 auto; 
+    align-items: center; */
+    
+    display: flex;
+    justify-content: center;
+    align-items: right;
+}
+
+.pitbull{
+
+    /* position: relative; Era assim
+    top: -467px; Era assim
+    left: 450px; Era assim*/
+
+    /* border-radius: 40px; */
+    /* border: 2px solid black; */
+
+    /* margin-left: 950px; */
+    /* margin-top: -450px; */
+
+
+    /* display: flex; Esse era assim*/
+    /* width: 550px; */
+    /* height: 650px; */
+    /* justify-content: center; Esse era assim*/
+    /* transition-duration: 0.3s; */
+
+    width: 100%;               /* A imagem se adapta ao container dela */
+    max-width: 500px;          /* Tamanho máximo que você quer para a imagem */
+    height: auto;              /* Mantém a proporção correta sem distorcer */
+    border-radius: 40px;
+    border: 2px solid black;
+    transition: transform 0.3s ease;
+}
+
+.pitbull:hover{
+    transform: scale(1.05);
+}
