@@ -106,13 +106,14 @@
     /* font-size: 35px; */
 
     font-size: 50px;
+
 }
 
 .dicas-le p{
 
     /* font-size: 17px; */
 
-    font-size: 18px;
+    font-size: 28px;
 }
 
 .dicas-ld{
@@ -144,7 +145,7 @@
     /* transition-duration: 0.3s; */
 
     width: 100%;               /* A imagem se adapta ao container dela */
-    max-width: 500px;          /* Tamanho máximo que você quer para a imagem */
+    max-width: 600px;          /* Tamanho máximo que você quer para a imagem */
     height: auto;              /* Mantém a proporção correta sem distorcer */
     border-radius: 40px;
     border: 2px solid black;
@@ -153,4 +154,74 @@
 
 .pitbull:hover{
     transform: scale(1.05);
+}
+
+footer{
+    background-color: black;
+    text-align: center;
+    color: white;
+    width: 100%;
+}
+
+footer h1{
+    font-size: 40px;
+    margin-top: 60px;
+}
+
+.grupo_assinar{
+    display: flex;
+    padding-top: 50px ;
+    
+
+}
+
+.email{
+    
+    margin-left: 400px;
+    font-size: 60px;
+    background-color: black;
+    border-radius: 20px;
+    border-color: white;
+    color: white;
+    transition:0.3s ease;
+    
+}
+
+.email:hover{
+    transform: scale(1.03);
+}
+
+.botao_assinar{
+    width: 15%;
+    border-color: black;
+    color: white;
+    background-color: #E7C055;
+    margin-left: 25px;
+    border-radius: 10px;
+    font-size: 35px;
+    transition: 0.3s ease;
+    cursor: pointer;
+    
+}
+
+.botao_assinar:hover{
+    transform: scale(1.05);
+}
+
+
+
+.menu_navegacao{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu_itens ul{
+    display: flex;
+    
+}
+
+.menu_itens li{
+    margin-left: 20px;
+    list-style-type: none;
 }
