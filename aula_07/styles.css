@@ -1,0 +1,12 @@
+.botaos{
+    display: grid;
+    grid-template-columns: 400px 400px 400px;
+    height: 600px;
+    gap: 10px;
+
+}
+.botaos button{
+    background-color: white;
+    cursor: pointer;
+    font-size: 2.5rem;
+}
