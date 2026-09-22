@@ -15,8 +15,11 @@ function login() {
     } else {
         alert("Senha ou usuário incorreto!");
     }
-}
 
+    window.location.href = "./home.html"
+
+}
+/////////////fim
 
 function cadastro(){
     const novoUsuario = document.getElementById('novo_usuario').value;
@@ -32,6 +35,8 @@ function cadastro(){
 
 
     alert("Cadastro feito!");
+
+    // window.location.href = "./login.html"
 }
 
 
@@ -39,6 +44,7 @@ function cadastro(){
 function recuperarSenha(){
    
 
+    localStorage.setItem('tentativasRecuperar', 0);
 
     const mudarSenhaCadastro = document.getElementById('mudar_senha').value;
     const palavraPasseConfirmacao = document.getElementById('palavra_passe_registrada').value;
@@ -64,13 +70,12 @@ function recuperarSenha(){
         alert("A palavra-passe não coincide");
         tentativasRecuperar = tentativasRecuperar + 1;
 
-        localStorage.setItem('tentativas', tentativasRecuperar);
-            
+        localStorage.setItem('tentativas', tentativasRecuperar);    
     }
  
     
    
-
+    // window.location.href = "./login.html";
     
 }
 

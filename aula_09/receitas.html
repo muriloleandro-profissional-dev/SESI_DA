@@ -1,0 +1,321 @@
+<!-- <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livro de Receitas Interativo</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <nav class="quick-nav">
+    <div class="quick-nav-container">
+      <span class="quick-nav-title">Acesso Rápido:</span>
+      <div class="quick-pills" id="quickPills"></div>
+    </div>
+  </nav>
+
+  <header class="hero-header">
+    <div class="header-content">
+      <h1>🍳 Livro de Receitas Interativo</h1>
+      <p>Pratos incríveis para todos os momentos, com dicas práticas e alertas de preparo.</p>
+    </div>
+
+    <div class="controls-container">
+      <div class="search-box">
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Busque por nome ou ingrediente..."
+          aria-label="Buscar receitas"
+        >
+      </div>
+
+      <div class="filter-box">
+        <select id="categoryFilter" aria-label="Filtrar por Categoria">
+          <option value="todas">Todas as Categorias</option>
+          <option value="Entrada">Entrada</option>
+          <option value="Prato Principal">Prato Principal</option>
+          <option value="Sobremesa">Sobremesa</option>
+          <option value="Lanche">Lanche</option>
+        </select>
+
+        <select id="difficultyFilter" aria-label="Filtrar por Dificuldade">
+          <option value="todas">Todas as Dificuldades</option>
+          <option value="Fácil">Fácil</option>
+          <option value="Médio">Médio</option>
+          <option value="Difícil">Difícil</option>
+        </select>
+
+        <button id="resetFavoritesBtn" class="btn-secondary" title="Redefinir favoritos">
+          Limpar Favoritos
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <section class="recipes-grid" id="recipesGrid"></section>
+
+    <div id="emptyState" class="empty-state hidden">
+      <p>Nenhuma receita encontrada com os filtros selecionados. 🔍</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>Desenvolvido com HTML, CSS e JS Vanilla. Salvo via localStorage.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livro de Receitas Pro & Custom</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Mensagens de Toast (Feedback Visual) -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Barra de Acesso Rápido -->
+  <nav class="quick-nav">
+    <div class="quick-nav-container">
+      <span class="quick-nav-title">Navegação rápida:</span>
+      <div class="quick-pills" id="quickPills"></div>
+    </div>
+  </nav>
+
+  <!-- Cabeçalho Principal -->
+  <header class="hero-header">
+    <div class="header-top">
+      <div class="brand">
+        <h1>🍳 Livro de Receitas Pro</h1>
+        <p>Crie, organize e compartilhe suas receitas com controle de privacidade.</p>
+      </div>
+
+      <!-- Área de Autenticação / Perfil no Topo -->
+      <div class="user-action-area" id="userActionArea">
+        <!-- Renderizado dinamicamente via JS -->
+      </div>
+    </div>
+
+    <!-- Controles de Busca, Filtro e Ações de Usuário -->
+    <div class="controls-container">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Busque por nome ou ingrediente..." aria-label="Buscar receitas">
+      </div>
+
+      <div class="filter-box">
+        <select id="categoryFilter" aria-label="Filtrar por Categoria">
+          <option value="todas">Todas as Categorias</option>
+          <option value="Entrada">Entrada</option>
+          <option value="Prato Principal">Prato Principal</option>
+          <option value="Sobremesa">Sobremesa</option>
+          <option value="Lanche">Lanche</option>
+        </select>
+
+        <select id="difficultyFilter" aria-label="Filtrar por Dificuldade">
+          <option value="todas">Todas as Dificuldades</option>
+          <option value="Fácil">Fácil</option>
+          <option value="Médio">Médio</option>
+          <option value="Difícil">Difícil</option>
+        </select>
+
+        <button id="btnImportModal" class="btn-secondary" title="Importar receita por código de compartilhamento">
+          📥 Importar por Código
+        </button>
+
+        <button id="resetFavoritesBtn" class="btn-secondary" title="Redefinir favoritos">
+          Limpar Favoritos
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Conteúdo Principal -->
+  <main class="main-container">
+    <section class="recipes-grid" id="recipesGrid"></section>
+
+    <div id="emptyState" class="empty-state hidden">
+      <p>Nenhuma receita encontrada. Tente ajustar os filtros ou criar uma nova! 🔍</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>Desenvolvido com HTML, CSS e Vanilla JS • Persistência via localStorage</p>
+  </footer>
+
+  <!-- ==========================================
+       MODAL 1: AUTENTICAÇÃO (LOGIN / CADASTRO)
+       ========================================== -->
+  <div class="modal-overlay hidden" id="authModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="fecharModal('authModal')">&times;</button>
+      
+      <div class="tab-buttons">
+        <button class="tab-btn active" id="tabLoginBtn" onclick="alternarAbaAuth('login')">Entrar</button>
+        <button class="tab-btn" id="tabRegisterBtn" onclick="alternarAbaAuth('register')">Cadastrar-se</button>
+      </div>
+
+      <!-- FORMULÁRIO DE LOGIN -->
+      <form id="formLogin" class="auth-form">
+        <div class="form-group">
+          <label for="loginUsername">Nome de Usuário</label>
+          <input type="text" id="loginUsername" placeholder="Digite seu usuário" required>
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Senha</label>
+          <input type="password" id="loginPassword" placeholder="Digite sua senha" required>
+        </div>
+        <button type="submit" class="btn-primary form-submit">Entrar na Conta</button>
+      </form>
+
+      <!-- FORMULÁRIO DE CADASTRO -->
+      <form id="formRegister" class="auth-form hidden">
+        <div class="form-group">
+          <label for="regFullName">Nome Completo</label>
+          <input type="text" id="regFullName" placeholder="Seu nome" required>
+        </div>
+        <div class="form-group">
+          <label for="regUsername">Nome de Usuário (Username único)</label>
+          <input type="text" id="regUsername" placeholder="ex: chef_joao" required>
+        </div>
+        <div class="form-group">
+          <label for="regPassword">Senha</label>
+          <input type="password" id="regPassword" placeholder="Crie uma senha" required>
+        </div>
+        <div class="form-group">
+          <label for="regConfirmPassword">Confirmar Senha</label>
+          <input type="password" id="regConfirmPassword" placeholder="Repita a senha" required>
+        </div>
+        <button type="submit" class="btn-primary form-submit">Criar Minha Conta</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MODAL 2: CADASTRO / EDIÇÃO DE RECEITA
+       ========================================== -->
+  <div class="modal-overlay hidden" id="recipeModal">
+    <div class="modal-card modal-large">
+      <button class="modal-close" onclick="fecharModal('recipeModal')">&times;</button>
+      <h2 id="recipeModalTitle" class="modal-title">Nova Receita</h2>
+
+      <form id="formRecipe">
+        <input type="hidden" id="recipeEditId">
+
+        <div class="form-grid">
+          <div class="form-group col-span-2">
+            <label for="recNome">Nome da Receita *</label>
+            <input type="text" id="recNome" placeholder="Ex: Bolo de Cenoura com Fofinho" required>
+          </div>
+
+          <div class="form-group col-span-2">
+            <label for="recImagem">URL da Imagem *</label>
+            <input type="text" id="recImagem" placeholder="Ex: imagens/meubolo.jpg ou https://..." required>
+          </div>
+
+          <div class="form-group">
+            <label for="recCategoria">Categoria *</label>
+            <select id="recCategoria" required>
+              <option value="Entrada">Entrada</option>
+              <option value="Prato Principal" selected>Prato Principal</option>
+              <option value="Sobremesa">Sobremesa</option>
+              <option value="Lanche">Lanche</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="recDificuldade">Dificuldade *</label>
+            <select id="recDificuldade" required>
+              <option value="Fácil">Fácil</option>
+              <option value="Médio">Médio</option>
+              <option value="Difícil">Difícil</option>
+            </select>
+          </div>
+
+          <div class="form-group col-span-2">
+            <label for="recTempo">Tempo de Preparo *</label>
+            <input type="text" id="recTempo" placeholder="Ex: 45 min" required>
+          </div>
+
+          <div class="form-group col-span-2">
+            <label for="recBeneficio">Resumo do Benefício / Por que fazer *</label>
+            <textarea id="recBeneficio" rows="2" placeholder="Ex: Perfeito para o lanche da tarde, macio e rápido." required></textarea>
+          </div>
+
+          <div class="form-group col-span-2">
+            <label for="recAlerta">Alerta de Complexidade / Dicas *</label>
+            <textarea id="recAlerta" rows="2" placeholder="Ex: Não abra o forno nos primeiros 20 minutos." required></textarea>
+          </div>
+
+          <!-- Múltiplos Ingredientes Dinâmicos -->
+          <div class="form-group col-span-2">
+            <div class="dynamic-header">
+              <label>Ingredientes *</label>
+              <button type="button" class="btn-inline" onclick="adicionarCampoIngrediente()">+ Adicionar Item</button>
+            </div>
+            <div id="dynamicIngredientsList" class="dynamic-list"></div>
+          </div>
+
+          <!-- Múltiplos Passos Dinâmicos -->
+          <div class="form-group col-span-2">
+            <div class="dynamic-header">
+              <label>Modo de Preparo (Passos) *</label>
+              <button type="button" class="btn-inline" onclick="adicionarCampoPasso()">+ Adicionar Passo</button>
+            </div>
+            <div id="dynamicStepsList" class="dynamic-list"></div>
+          </div>
+
+          <!-- Configuração de Privacidade -->
+          <div class="form-group col-span-2 checkbox-group">
+            <label class="custom-toggle">
+              <input type="checkbox" id="recPrivada">
+              <span class="toggle-slider"></span>
+              <span class="toggle-label">🔒 Tornar receita privada (Exibir apenas para mim)</span>
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary form-submit margin-top-16">Salvar Receita</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MODAL 3: IMPORTAÇÃO POR CÓDIGO (BASE64)
+       ========================================== -->
+  <div class="modal-overlay hidden" id="importModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="fecharModal('importModal')">&times;</button>
+      <h2 class="modal-title">📥 Importar Receita</h2>
+      <p class="modal-subtitle">Cole abaixo o código de compartilhamento Base64 gerado por outro usuário:</p>
+
+      <form id="formImport">
+        <div class="form-group">
+          <textarea id="importCodeInput" rows="5" placeholder="Cole o código aqui..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary form-submit">Processar e Salvar Receita</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
