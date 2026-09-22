@@ -34,24 +34,42 @@ function cadastro(){
     alert("Cadastro feito!");
 }
 
+
+
 function recuperarSenha(){
+   
+
+
     const mudarSenhaCadastro = document.getElementById('mudar_senha').value;
     const palavraPasseConfirmacao = document.getElementById('palavra_passe_registrada').value;
     const palavraPasse = localStorage.getItem('palavra-passe');
-    // const tentativasRecuperar = document('tentativas').value;
 
-    localStorage.getItem('senha', mudarSenhaCadastro);
-    localStorage.getItem('palavra-passe', palavraPasse);
+    let tentativasRecuperar = Number(localStorage.getItem('tentativas' ) || 0);
+
+    if(tentativasRecuperar >= 3){
+        alert("Limite atingido, tente sua senha após um tempo");
+        return;
+    }
+
+    // localStorage.getItem('senha', mudarSenhaCadastro);
+    // localStorage.getItem('palavra-passe', palavraPasse);
     // localStorage.getItem('tentativas', tentativasRecuperar);
     
     if(palavraPasseConfirmacao == palavraPasse){
         localStorage.setItem('senha', mudarSenhaCadastro);
         alert("Senha mudada!");
+        localStorage.setItem('tentativas', 0);
     }
     else{
         alert("A palavra-passe não coincide");
-        // tentativasRecuperar++;
+        tentativasRecuperar = tentativasRecuperar + 1;
+
+        localStorage.setItem('tentativas', tentativasRecuperar);
+            
     }
+ 
+    
+   
 
     
 }
